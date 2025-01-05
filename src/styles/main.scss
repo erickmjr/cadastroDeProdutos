@@ -1,15 +1,15 @@
+// src/styles/main.scss
+
 @use 'variaveis/variaveis' as variaveis;
 @use 'config/reset';
 
 header {
-    background-color: #fff;
-    font-family: variaveis.$fontePrincipal; 
+    background-color: variaveis.$cor-fundo;
 }
 
 section#cadastrarProdutos {
-    background-image: linear-gradient(to bottom, #fff , #747d8c);
-    color: black;
-    font-family: variaveis.$fontePrincipal;
+    background-image: linear-gradient(to bottom, variaveis.$cor-fundo , variaveis.$cor-secundaria);
+    color: variaveis.$cor-texto;
 
     form {
         input {
@@ -17,21 +17,20 @@ section#cadastrarProdutos {
         }
 
         button {
-            @include variaveis.button-style(); 
+            @include variaveis.button-style();
         }
     }
 }
 
 section#listarProdutos {
-    background-color: #747d8c;
-    font-family: variaveis.$fontePrincipal; 
+    background-color: variaveis.$cor-secundaria;
 
     h2, h3 {
-        color: #fff;
+        color: variaveis.$cor-fundo;
     }
 
     button {
-        @include variaveis.button-style(); 
+        @include variaveis.button-style();
     }
 }
 
