@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+$fontePrincipal: 'MontSerrat', sans-serif;
+
+@mixin button-style() {
+    background-color: #1e90ff;
+    color: #fff;
+    border: none;
+}

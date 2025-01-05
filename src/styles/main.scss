@@ -1,4 +1,45 @@
-* {
-    margin: 0;
-    padding: 0;
+@use 'variaveis/variaveis' as variaveis;
+@use 'config/reset';
+
+header {
+    background-color: #fff;
+    font-family: variaveis.$fontePrincipal; 
+}
+
+section#cadastrarProdutos {
+    background-image: linear-gradient(to bottom, #fff , #747d8c);
+    color: black;
+    font-family: variaveis.$fontePrincipal;
+
+    form {
+        input {
+            border: none;
+        }
+
+        button {
+            @include variaveis.button-style(); 
+        }
+    }
+}
+
+section#listarProdutos {
+    background-color: #747d8c;
+    font-family: variaveis.$fontePrincipal; 
+
+    h2, h3 {
+        color: #fff;
+    }
+
+    button {
+        @include variaveis.button-style(); 
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    section#cadastrarProdutos {
+        form {
+            margin: auto;
+            max-width: 50%;
+        }
+    }
 }

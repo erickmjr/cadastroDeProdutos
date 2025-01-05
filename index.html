@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <header class="navbar navbar-expand-lg sticky-top bg-success text-dark p-4" id="cabecalho">
+    <header class="navbar navbar-expand-lg sticky-top text-dark p-4" id="cabecalho">
         <div class="container">
             <h1 class="text-center fw-bold m-0">MARKETPLACE</h1>
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu-navegacao">
@@ -43,71 +43,63 @@
 
                 <h2 class="text-center fw-bold fs-1">Cadastrar novos produtos</h2>
 
-                <form class="d-flex flex-column gap-3 mt-2">
+                <form class="d-flex flex-column gap-3 mt-2" id="formulario">
                     <div class="d-flex flex-column">
-                        <label class="form-label text-left m-0" for="nomeProduto">
+                        <label class="form-label text-left m-0 fw-bold" for="nomeProduto">
                             Nome do produto
                         </label>
-                        <input type="text" id="nomeProduto" class="p-1 rounded" placeholder="Digite aqui..." required>
+                        <input type="text" id="nomeProduto" class="p-2 rounded" placeholder="Digite aqui..." required>
                     </div>
 
                     <div class="d-flex flex-column">
-                        <label class="form-label text-left m-0" for="descricaoProduto">
+                        <label class="form-label text-left m-0 fw-bold" for="descricaoProduto">
                             Descrição
                         </label>
-                        <input type="text" id="descricaoProduto" class="p-1 rounded" placeholder="Digite aqui..." required>
+                        <input type="text" name="descricaoProduto" id="descricaoProduto" class="p-2 rounded" placeholder="Digite aqui..." required>
                     </div>
 
                     <div class="d-flex flex-column">
-                        <label class="form-label text-left m-0" for="valorProduto">
+                        <label class="form-label text-left m-0 fw-bold" for="valorProduto">
                             Valor em R$
                         </label>
-                        <input type="number" id="valorProduto" class="p-1 rounded" placeholder="Insira o valor do produto...">
+                        <input type="number" name="valorProduto" id="valorProduto" class="p-2 rounded" placeholder="Insira o valor do produto..." required>
                     </div>
 
                     <div class="d-flex flex-column">
-                            <label class="form-label text-left">
-                                Disponível para venda
-                            </label>
-                            
-                            <div class="d-flex align-items-center gap-2 m-0 p-0">
-                                <input type="radio" id="disponivelSim" name="disponivel" value="true" required>
-                                <label class="form-label text-left m-0 p-0" for="disponivelSim">
-                                    Sim
-                                </label>
-                                
-                            </div>
-                            
-                            <div class="d-flex align-items-center gap-2">
-                                <input type="radio" id="disponivelNao" name="disponivel" value="false" required>
-                                <label class="form-label text-left m-0 p-0" for="disponivelNao" >
-                                    Não
-                                </label>
-                            </div>
-                            
-                            <div class="text-center pt-3">
-                                <button type="submit" class="btn btn-success w-100 p-2" id="cadastrarBtn">
-                                    Cadastrar
-                                </button>
-                            </div>
+                        <label for="disponivel" class="form-label text-left fw-bold">
+                            Disponível para venda
+                        </label>
+                        <select name="disponivel" id="disponivel" class="form-select p-2">
+                            <option value="" disabled selected>
+                                Escolha uma opção
+                            </option>
+                            <option value="true">Sim</option>
+                            <option value="false">Não</option>
+                        </select>
                     </div>
+
+                    <div class="text-center pt-3">
+                        <button type="submit" class="btn w-100 p-2" id="cadastrarBtn" href="#listarProdutos">
+                            Cadastrar
+                        </button>
+                    </div>
+                    
                 </form>
             </div>
         </section>
 
-        <section id="listarProdutos">
+        <section id="listarProdutos" class="py-3">
+            <h2 class="text-center fw-bold">LISTA DE PRODUTOS</h2>
             <div class="container">
-                <div class="row">
-                    <div class="card col-12 col-md-4 col-sm-4">
-                        <article class="card-body">
-                            <h3 class="fs-4">
-
-                            </h3>
-                            <h3 class="fs-5">
-
-                            </h3>
-                        </article>
+                <h3 class="fs-4 text-center">Visualize aqui os produtos adicionados na seção de cadastro</h3>
+                <div class="row gap-3" id="listaDeProdutos">
+                    <div class="col-12 col-md-4 col-sm-4 mb-2">
+                        <button type="button" class="btn d-flex align-items-center fw-bold justify-content-center w-100 h-100 fs-6 m-0 px-3 py-0" id="cadastrarBtnSecundario">
+                            <i class="bi bi-plus fs-1 m-0 p-0">
+                            </i>
+                        </button>
                     </div>
+                    
                 </div>
             </div>
         </section>
@@ -118,6 +110,10 @@
     <script src="src/lib/bootstrap.bundle.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/localization/messages_pt_BR.min.js"></script>
 
     <script src="src/scripts/main.js"></script>
 </body>
